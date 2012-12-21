@@ -71,7 +71,10 @@
 
 -(void)settingsButtonPressed{
     
-    SettingsViewController *svController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+    if (!svController) {
+        svController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+    }
+    
     [Utils showModalVC:svController animated:YES];
     
     Connection *connection = [Connection sharedInstance];
@@ -127,6 +130,7 @@
     self.viewControllers=nil;
     self.scrollView=nil;
     self.pageControl=nil;
+    [svController release];
     [super dealloc];
 }
 

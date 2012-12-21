@@ -11,6 +11,7 @@
 #import "HorizontalMenuItemViewController.h"
 #import "RandomSelector.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SettingsViewController.h"
 //
 //@protocol SFScreenScrollViewViewControllerDelegate <NSObject>
 ////-(void)wasDroppedAt:(CGPoint)pos color:(UIColor*)color;
@@ -40,6 +41,7 @@
     UIColor *uiColorROSE;
     UIColor *uiColorWHITE;
     UIColor *uiColorPINK;
+    SettingsViewController *svController;
 }
 
 //@property (retain, nonatomic) IBOutlet UILabel *leftLbl;

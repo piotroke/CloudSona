@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PFScreenScrollViewViewController.h"
+#import "SettingsViewController.h"
 #import "Connection.h"
 
 //@protocol HorizontalMenuViewControllerDelegate <NSObject>
@@ -28,6 +29,7 @@
     BOOL pageControlUsed;
 	UIView *parentView;
     UIButton *settingsButton;
+    SettingsViewController *svController;
 
 }
 //@property (nonatomic, assign) id<HorizontalMenuViewControllerDelegate> hmVCDelegate;

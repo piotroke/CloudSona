@@ -77,7 +77,7 @@
 					if (len > 0)
 					{
 						NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
-						NSData *theData = [[NSData alloc] initWithBytes:buffer length:len];
+//						NSData *theData = [[NSData alloc] initWithBytes:buffer length:len];
 						if (nil != output)
 						{
 							//NSArray *arr = [output componentsSeparatedByString:@"\n"];
@@ -143,7 +143,7 @@
 - (void)viewDidUnload
 {
 
-    [delegate release];
+//    [delegate release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

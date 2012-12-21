@@ -204,9 +204,8 @@ int buttonsNum = 4;
     
     Connection *connection = [Connection sharedInstance];
     [connection sendData:payload];
-    
+    */
     [payload release];
-     */
 }
 
 -(void) sliderButton:(SliderButton *)sb didEnable:(BOOL)enable {

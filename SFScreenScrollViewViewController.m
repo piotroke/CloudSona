@@ -426,7 +426,10 @@
 }
 
 -(void)displaySettings {
-    SettingsViewController *svController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+//    SettingsViewController *svController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+    if (!svController) {
+        svController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+    }
 //    presentModalViewController
     [Utils showModalVC:svController animated:YES];
     
@@ -524,6 +527,7 @@
 //    [leftLbl release];
     [btnAmplitudeA release];
     [btnAmplitudeB release];
+    [svController release];
     [btnFreqA release];
 //    [btnFreqB release];
     [btnBeat release];
