@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B045597155A57CF00F37A7F /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B045595155A57CF00F37A7F /* ColorPickerViewController.m */; };
+		0B045598155A57CF00F37A7F /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B045596155A57CF00F37A7F /* ColorPickerViewController.xib */; };
+		0B0B6B5B156E41DC00FAB80C /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF1C156A4EAE001F99E2 /* Default-Landscape~ipad.png */; };
+		0B0B6B5D156E426700FAB80C /* ic_cloudsona.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B0B6B5C156E426700FAB80C /* ic_cloudsona.png */; };
+		0B0FC0DA155D6766002341E0 /* hideMySlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B0FC0D9155D6766002341E0 /* hideMySlider.png */; };
+		0B331CB015CAAB07003EBD12 /* soundwave8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B331CAF15CAAB07003EBD12 /* soundwave8.jpg */; };
+		0B4232211563A04200D235BB /* HorizontalMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42321C1563A04100D235BB /* HorizontalMenuViewController.m */; };
+		0B4232221563A04200D235BB /* HorizontalMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42321D1563A04100D235BB /* HorizontalMenuViewController.xib */; };
+		0B4232231563A04200D235BB /* AppTutorialPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42321F1563A04100D235BB /* AppTutorialPageController.m */; };
+		0B4232241563A04200D235BB /* AppTutorialPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4232201563A04100D235BB /* AppTutorialPageController.xib */; };
+		0B4232291563C82B00D235BB /* MainScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4232271563C82B00D235BB /* MainScrollViewViewController.m */; };
+		0B42322A1563C82B00D235BB /* MainScrollViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4232281563C82B00D235BB /* MainScrollViewViewController.xib */; };
+		0B42322E1563CAD900D235BB /* SFScreenScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42322C1563CAD900D235BB /* SFScreenScrollViewViewController.m */; };
+		0B42322F1563CAD900D235BB /* SFScreenScrollViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42322D1563CAD900D235BB /* SFScreenScrollViewViewController.xib */; };
+		0B4232331563CB2100D235BB /* PFScreenScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4232311563CB2100D235BB /* PFScreenScrollViewViewController.m */; };
+		0B4232341563CB2100D235BB /* PFScreenScrollViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4232321563CB2100D235BB /* PFScreenScrollViewViewController.xib */; };
+		0B5F4BC2157E1B7B000D3A1C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F4BC0157E1B7B000D3A1C /* SettingsViewController.m */; };
+		0B5F4BC3157E1B7B000D3A1C /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5F4BC1157E1B7B000D3A1C /* SettingsViewController.xib */; };
+		0B5F4BC6157E2EF1000D3A1C /* ConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F4BC5157E2EF0000D3A1C /* ConnectionController.m */; };
+		0BBB012315595D0E00003A33 /* cs_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BBB012215595D0D00003A33 /* cs_logo.png */; };
+		0BD5B6921564E965009C6431 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD5B6911564E965009C6431 /* Settings.png */; };
+		0BD5B6951564F3AD009C6431 /* SoundWave1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BD5B6941564F3AC009C6431 /* SoundWave1.jpg */; };
+		0BE087C4155802AF001B46F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE087C3155802AF001B46F0 /* UIKit.framework */; };
+		0BE087C6155802AF001B46F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE087C5155802AF001B46F0 /* Foundation.framework */; };
+		0BE087C8155802AF001B46F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE087C7155802AF001B46F0 /* CoreGraphics.framework */; };
+		0BE087CE155802AF001B46F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BE087CC155802AF001B46F0 /* InfoPlist.strings */; };
+		0BE087D0155802AF001B46F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE087CF155802AF001B46F0 /* main.m */; };
+		0BE087D4155802AF001B46F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE087D3155802AF001B46F0 /* AppDelegate.m */; };
+		0BE087DB155802CF001B46F0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE087DA155802CF001B46F0 /* MainWindow.xib */; };
+		0BE087DF15580459001B46F0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE087DD15580459001B46F0 /* MainViewController.m */; };
+		0BE087E015580459001B46F0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE087DE15580459001B46F0 /* MainViewController.xib */; };
+		0BE087E41558068F001B46F0 /* SlidersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE087E21558068F001B46F0 /* SlidersViewController.m */; };
+		0BE087E51558068F001B46F0 /* SlidersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE087E31558068F001B46F0 /* SlidersViewController.xib */; };
+		0BE087E9155808CF001B46F0 /* SliderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE087E7155808CF001B46F0 /* SliderButton.m */; };
+		0BE087EA155808CF001B46F0 /* SliderButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE087E8155808CF001B46F0 /* SliderButton.xib */; };
+		0BE1EF13156A2B1D001F99E2 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1EF12156A2B1C001F99E2 /* Utils.m */; };
+		0BE1EF18156A499E001F99E2 /* PFScreenOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1EF16156A499D001F99E2 /* PFScreenOptionsViewController.m */; };
+		0BE1EF19156A499E001F99E2 /* PFScreenOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF17156A499E001F99E2 /* PFScreenOptionsViewController.xib */; };
+		0BE1EF1B156A4E90001F99E2 /* cloudsona_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF1A156A4E8F001F99E2 /* cloudsona_splash.png */; };
+		0BE1EF40156A5909001F99E2 /* soundwave2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF3A156A5908001F99E2 /* soundwave2.jpg */; };
+		0BE1EF41156A5909001F99E2 /* soundwave3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF3B156A5909001F99E2 /* soundwave3.jpg */; };
+		0BE1EF42156A5909001F99E2 /* soundwave4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF3C156A5909001F99E2 /* soundwave4.jpg */; };
+		0BE1EF43156A5909001F99E2 /* soundwave5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF3D156A5909001F99E2 /* soundwave5.jpg */; };
+		0BE1EF44156A5909001F99E2 /* soundwave6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF3E156A5909001F99E2 /* soundwave6.jpg */; };
+		0BE1EF45156A5909001F99E2 /* soundwave7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF3F156A5909001F99E2 /* soundwave7.jpg */; };
+		0BE1EF47156A5913001F99E2 /* soundwave.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1EF46156A5913001F99E2 /* soundwave.jpg */; };
+		0BE1EF4A156A7CC2001F99E2 /* HorizontalMenuItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1EF49156A7CC2001F99E2 /* HorizontalMenuItemViewController.m */; };
+		0BE5E0AC156B70610032F394 /* 3dButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5E0AB156B70610032F394 /* 3dButton.png */; };
+		2FE2624E15A719E700CE7794 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2624D15A719E100CE7794 /* Connection.m */; };
+		A80ADE94164015D200509945 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80ADE93164015D200509945 /* SystemConfiguration.framework */; };
+		A8C04AF91613435C00E8C914 /* RandomSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C04AF81613435C00E8C914 /* RandomSelector.m */; };
+		A8E8543A164D0CBA00BAF07D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E85439164D0CBA00BAF07D /* Settings.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B045594155A57CF00F37A7F /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
+		0B045595155A57CF00F37A7F /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
+		0B045596155A57CF00F37A7F /* ColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerViewController.xib; sourceTree = "<group>"; };
+		0B0B6B5C156E426700FAB80C /* ic_cloudsona.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_cloudsona.png; sourceTree = "<group>"; };
+		0B0FC0D9155D6766002341E0 /* hideMySlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hideMySlider.png; sourceTree = "<group>"; };
+		0B1725EE157F871E0061AA3C /* OPCODE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPCODE.h; sourceTree = "<group>"; };
+		0B331CAF15CAAB07003EBD12 /* soundwave8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave8.jpg; sourceTree = "<group>"; };
+		0B42321B1563A04100D235BB /* HorizontalMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuViewController.h; sourceTree = "<group>"; };
+		0B42321C1563A04100D235BB /* HorizontalMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuViewController.m; sourceTree = "<group>"; };
+		0B42321D1563A04100D235BB /* HorizontalMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizontalMenuViewController.xib; sourceTree = "<group>"; };
+		0B42321E1563A04100D235BB /* AppTutorialPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTutorialPageController.h; sourceTree = "<group>"; };
+		0B42321F1563A04100D235BB /* AppTutorialPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTutorialPageController.m; sourceTree = "<group>"; };
+		0B4232201563A04100D235BB /* AppTutorialPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTutorialPageController.xib; sourceTree = "<group>"; };
+		0B4232261563C82B00D235BB /* MainScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScrollViewViewController.h; sourceTree = "<group>"; };
+		0B4232271563C82B00D235BB /* MainScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScrollViewViewController.m; sourceTree = "<group>"; };
+		0B4232281563C82B00D235BB /* MainScrollViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainScrollViewViewController.xib; sourceTree = "<group>"; };
+		0B42322B1563CAD900D235BB /* SFScreenScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFScreenScrollViewViewController.h; sourceTree = "<group>"; };
+		0B42322C1563CAD900D235BB /* SFScreenScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFScreenScrollViewViewController.m; sourceTree = "<group>"; };
+		0B42322D1563CAD900D235BB /* SFScreenScrollViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFScreenScrollViewViewController.xib; sourceTree = "<group>"; };
+		0B4232301563CB2100D235BB /* PFScreenScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFScreenScrollViewViewController.h; sourceTree = "<group>"; };
+		0B4232311563CB2100D235BB /* PFScreenScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFScreenScrollViewViewController.m; sourceTree = "<group>"; };
+		0B4232321563CB2100D235BB /* PFScreenScrollViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFScreenScrollViewViewController.xib; sourceTree = "<group>"; };
+		0B5F4BBF157E1B7B000D3A1C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		0B5F4BC0157E1B7B000D3A1C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		0B5F4BC1157E1B7B000D3A1C /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		0B5F4BC4157E2EEF000D3A1C /* ConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionController.h; sourceTree = "<group>"; };
+		0B5F4BC5157E2EF0000D3A1C /* ConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionController.m; sourceTree = "<group>"; };
+		0BBB012215595D0D00003A33 /* cs_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cs_logo.png; sourceTree = "<group>"; };
+		0BD5B6911564E965009C6431 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		0BD5B6941564F3AC009C6431 /* SoundWave1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SoundWave1.jpg; sourceTree = "<group>"; };
+		0BE087BF155802AF001B46F0 /* CloudSona 3.6.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudSona 3.6.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE087C3155802AF001B46F0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0BE087C5155802AF001B46F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0BE087C7155802AF001B46F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0BE087CB155802AF001B46F0 /* CloudSona2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CloudSona2-Info.plist"; sourceTree = "<group>"; };
+		0BE087CD155802AF001B46F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0BE087CF155802AF001B46F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0BE087D1155802AF001B46F0 /* CloudSona2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudSona2-Prefix.pch"; sourceTree = "<group>"; };
+		0BE087D2155802AF001B46F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0BE087D3155802AF001B46F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0BE087DA155802CF001B46F0 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		0BE087DC15580459001B46F0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0BE087DD15580459001B46F0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0BE087DE15580459001B46F0 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0BE087E11558068F001B46F0 /* SlidersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidersViewController.h; sourceTree = "<group>"; };
+		0BE087E21558068F001B46F0 /* SlidersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidersViewController.m; sourceTree = "<group>"; };
+		0BE087E31558068F001B46F0 /* SlidersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlidersViewController.xib; sourceTree = "<group>"; };
+		0BE087E6155808CF001B46F0 /* SliderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderButton.h; sourceTree = "<group>"; };
+		0BE087E7155808CF001B46F0 /* SliderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderButton.m; sourceTree = "<group>"; };
+		0BE087E8155808CF001B46F0 /* SliderButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderButton.xib; sourceTree = "<group>"; };
+		0BE1EF11156A2B1C001F99E2 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		0BE1EF12156A2B1C001F99E2 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		0BE1EF15156A499D001F99E2 /* PFScreenOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFScreenOptionsViewController.h; sourceTree = "<group>"; };
+		0BE1EF16156A499D001F99E2 /* PFScreenOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFScreenOptionsViewController.m; sourceTree = "<group>"; };
+		0BE1EF17156A499E001F99E2 /* PFScreenOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFScreenOptionsViewController.xib; sourceTree = "<group>"; };
+		0BE1EF1A156A4E8F001F99E2 /* cloudsona_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudsona_splash.png; sourceTree = "<group>"; };
+		0BE1EF1C156A4EAE001F99E2 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		0BE1EF1E156A4EB8001F99E2 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		0BE1EF3A156A5908001F99E2 /* soundwave2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave2.jpg; sourceTree = "<group>"; };
+		0BE1EF3B156A5909001F99E2 /* soundwave3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave3.jpg; sourceTree = "<group>"; };
+		0BE1EF3C156A5909001F99E2 /* soundwave4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave4.jpg; sourceTree = "<group>"; };
+		0BE1EF3D156A5909001F99E2 /* soundwave5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave5.jpg; sourceTree = "<group>"; };
+		0BE1EF3E156A5909001F99E2 /* soundwave6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave6.jpg; sourceTree = "<group>"; };
+		0BE1EF3F156A5909001F99E2 /* soundwave7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave7.jpg; sourceTree = "<group>"; };
+		0BE1EF46156A5913001F99E2 /* soundwave.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundwave.jpg; sourceTree = "<group>"; };
+		0BE1EF48156A7CC1001F99E2 /* HorizontalMenuItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuItemViewController.h; sourceTree = "<group>"; };
+		0BE1EF49156A7CC2001F99E2 /* HorizontalMenuItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuItemViewController.m; sourceTree = "<group>"; };
+		0BE5E0AB156B70610032F394 /* 3dButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dButton.png; sourceTree = "<group>"; };
+		2FE2624C15A719DF00CE7794 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		2FE2624D15A719E100CE7794 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		A80ADE93164015D200509945 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A8C04AF71613435C00E8C914 /* RandomSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomSelector.h; sourceTree = "<group>"; };
+		A8C04AF81613435C00E8C914 /* RandomSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomSelector.m; sourceTree = "<group>"; };
+		A8E85438164D0CBA00BAF07D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		A8E85439164D0CBA00BAF07D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0BE087BC155802AF001B46F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A80ADE94164015D200509945 /* SystemConfiguration.framework in Frameworks */,
+				0BE087C4155802AF001B46F0 /* UIKit.framework in Frameworks */,
+				0BE087C6155802AF001B46F0 /* Foundation.framework in Frameworks */,
+				0BE087C8155802AF001B46F0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B54B0F5157E190D0029979E /* img */ = {
+			isa = PBXGroup;
+			children = (
+				0B331CAF15CAAB07003EBD12 /* soundwave8.jpg */,
+				0BD5B6941564F3AC009C6431 /* SoundWave1.jpg */,
+				0BE1EF46156A5913001F99E2 /* soundwave.jpg */,
+				0BE1EF1E156A4EB8001F99E2 /* Default-Portrait~ipad.png */,
+				0BBB012215595D0D00003A33 /* cs_logo.png */,
+				0BE1EF3A156A5908001F99E2 /* soundwave2.jpg */,
+				0BD5B6911564E965009C6431 /* Settings.png */,
+				0B0FC0D9155D6766002341E0 /* hideMySlider.png */,
+				0BE1EF3B156A5909001F99E2 /* soundwave3.jpg */,
+				0BE1EF3C156A5909001F99E2 /* soundwave4.jpg */,
+				0BE1EF3D156A5909001F99E2 /* soundwave5.jpg */,
+				0BE1EF1A156A4E8F001F99E2 /* cloudsona_splash.png */,
+				0BE1EF3E156A5909001F99E2 /* soundwave6.jpg */,
+				0BE1EF1C156A4EAE001F99E2 /* Default-Landscape~ipad.png */,
+				0BE1EF3F156A5909001F99E2 /* soundwave7.jpg */,
+				0B0B6B5C156E426700FAB80C /* ic_cloudsona.png */,
+				0BE5E0AB156B70610032F394 /* 3dButton.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+		0B5F4BBD157E1A86000D3A1C /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				0BE1EF48156A7CC1001F99E2 /* HorizontalMenuItemViewController.h */,
+				0B4232301563CB2100D235BB /* PFScreenScrollViewViewController.h */,
+				0B42322B1563CAD900D235BB /* SFScreenScrollViewViewController.h */,
+				0B42321B1563A04100D235BB /* HorizontalMenuViewController.h */,
+				0BE087E6155808CF001B46F0 /* SliderButton.h */,
+				0B4232261563C82B00D235BB /* MainScrollViewViewController.h */,
+				0BE1EF11156A2B1C001F99E2 /* Utils.h */,
+				0B42321E1563A04100D235BB /* AppTutorialPageController.h */,
+				0BE1EF15156A499D001F99E2 /* PFScreenOptionsViewController.h */,
+				0BE087DC15580459001B46F0 /* MainViewController.h */,
+				0BE087E11558068F001B46F0 /* SlidersViewController.h */,
+				0B045594155A57CF00F37A7F /* ColorPickerViewController.h */,
+				A8C04AF71613435C00E8C914 /* RandomSelector.h */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		0B5F4BBE157E1ACD000D3A1C /* MainFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0BE1EF49156A7CC2001F99E2 /* HorizontalMenuItemViewController.m */,
+				0BE1EF16156A499D001F99E2 /* PFScreenOptionsViewController.m */,
+				0BE1EF12156A2B1C001F99E2 /* Utils.m */,
+				0B4232311563CB2100D235BB /* PFScreenScrollViewViewController.m */,
+				0B42322C1563CAD900D235BB /* SFScreenScrollViewViewController.m */,
+				0B4232271563C82B00D235BB /* MainScrollViewViewController.m */,
+				0B42321C1563A04100D235BB /* HorizontalMenuViewController.m */,
+				0B42321F1563A04100D235BB /* AppTutorialPageController.m */,
+				0B045595155A57CF00F37A7F /* ColorPickerViewController.m */,
+				0BE087E7155808CF001B46F0 /* SliderButton.m */,
+				0BE087E21558068F001B46F0 /* SlidersViewController.m */,
+				0BE087DD15580459001B46F0 /* MainViewController.m */,
+				A8C04AF81613435C00E8C914 /* RandomSelector.m */,
+			);
+			name = MainFiles;
+			sourceTree = "<group>";
+		};
+		0B7FD859157E19B900E16460 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				0BE1EF17156A499E001F99E2 /* PFScreenOptionsViewController.xib */,
+				0B4232321563CB2100D235BB /* PFScreenScrollViewViewController.xib */,
+				0B42321D1563A04100D235BB /* HorizontalMenuViewController.xib */,
+				0B42322D1563CAD900D235BB /* SFScreenScrollViewViewController.xib */,
+				0B4232201563A04100D235BB /* AppTutorialPageController.xib */,
+				0B4232281563C82B00D235BB /* MainScrollViewViewController.xib */,
+				0B045596155A57CF00F37A7F /* ColorPickerViewController.xib */,
+				0BE087E8155808CF001B46F0 /* SliderButton.xib */,
+				0BE087E31558068F001B46F0 /* SlidersViewController.xib */,
+				0BE087DE15580459001B46F0 /* MainViewController.xib */,
+				0BE087DA155802CF001B46F0 /* MainWindow.xib */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		0BE087B4155802AF001B46F0 = {
+			isa = PBXGroup;
+			children = (
+				A80ADE93164015D200509945 /* SystemConfiguration.framework */,
+				0B1725EE157F871E0061AA3C /* OPCODE.h */,
+				0B5F4BC4157E2EEF000D3A1C /* ConnectionController.h */,
+				0B5F4BC5157E2EF0000D3A1C /* ConnectionController.m */,
+				2FE2624C15A719DF00CE7794 /* Connection.h */,
+				2FE2624D15A719E100CE7794 /* Connection.m */,
+				0B5F4BBF157E1B7B000D3A1C /* SettingsViewController.h */,
+				0B5F4BC0157E1B7B000D3A1C /* SettingsViewController.m */,
+				0B5F4BC1157E1B7B000D3A1C /* SettingsViewController.xib */,
+				A8E85438164D0CBA00BAF07D /* Settings.h */,
+				A8E85439164D0CBA00BAF07D /* Settings.m */,
+				0B7FD859157E19B900E16460 /* Layout */,
+				0B5F4BBD157E1A86000D3A1C /* Header */,
+				0B54B0F5157E190D0029979E /* img */,
+				0B5F4BBE157E1ACD000D3A1C /* MainFiles */,
+				0BE087C9155802AF001B46F0 /* CloudSona2 */,
+				0BE087C2155802AF001B46F0 /* Frameworks */,
+				0BE087C0155802AF001B46F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0BE087C0155802AF001B46F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0BE087BF155802AF001B46F0 /* CloudSona 3.6.2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0BE087C2155802AF001B46F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BE087C3155802AF001B46F0 /* UIKit.framework */,
+				0BE087C5155802AF001B46F0 /* Foundation.framework */,
+				0BE087C7155802AF001B46F0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0BE087C9155802AF001B46F0 /* CloudSona2 */ = {
+			isa = PBXGroup;
+			children = (
+				0BE087D2155802AF001B46F0 /* AppDelegate.h */,
+				0BE087D3155802AF001B46F0 /* AppDelegate.m */,
+				0BE087CA155802AF001B46F0 /* Supporting Files */,
+			);
+			path = CloudSona2;
+			sourceTree = "<group>";
+		};
+		0BE087CA155802AF001B46F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0BE087CB155802AF001B46F0 /* CloudSona2-Info.plist */,
+				0BE087CC155802AF001B46F0 /* InfoPlist.strings */,
+				0BE087CF155802AF001B46F0 /* main.m */,
+				0BE087D1155802AF001B46F0 /* CloudSona2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0BE087BE155802AF001B46F0 /* CloudSona2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BE087D7155802AF001B46F0 /* Build configuration list for PBXNativeTarget "CloudSona2" */;
+			buildPhases = (
+				0BE087BB155802AF001B46F0 /* Sources */,
+				0BE087BC155802AF001B46F0 /* Frameworks */,
+				0BE087BD155802AF001B46F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudSona2;
+			productName = CloudSona2;
+			productReference = 0BE087BF155802AF001B46F0 /* CloudSona 3.6.2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0BE087B6155802AF001B46F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 0BE087B9155802AF001B46F0 /* Build configuration list for PBXProject "CloudSona2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0BE087B4155802AF001B46F0;
+			productRefGroup = 0BE087C0155802AF001B46F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0BE087BE155802AF001B46F0 /* CloudSona2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0BE087BD155802AF001B46F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BE087CE155802AF001B46F0 /* InfoPlist.strings in Resources */,
+				0BE087DB155802CF001B46F0 /* MainWindow.xib in Resources */,
+				0BE087E015580459001B46F0 /* MainViewController.xib in Resources */,
+				0BE087E51558068F001B46F0 /* SlidersViewController.xib in Resources */,
+				0BE087EA155808CF001B46F0 /* SliderButton.xib in Resources */,
+				0BBB012315595D0E00003A33 /* cs_logo.png in Resources */,
+				0B045598155A57CF00F37A7F /* ColorPickerViewController.xib in Resources */,
+				0B0FC0DA155D6766002341E0 /* hideMySlider.png in Resources */,
+				0B4232221563A04200D235BB /* HorizontalMenuViewController.xib in Resources */,
+				0B4232241563A04200D235BB /* AppTutorialPageController.xib in Resources */,
+				0B42322A1563C82B00D235BB /* MainScrollViewViewController.xib in Resources */,
+				0B42322F1563CAD900D235BB /* SFScreenScrollViewViewController.xib in Resources */,
+				0B4232341563CB2100D235BB /* PFScreenScrollViewViewController.xib in Resources */,
+				0BD5B6921564E965009C6431 /* Settings.png in Resources */,
+				0BD5B6951564F3AD009C6431 /* SoundWave1.jpg in Resources */,
+				0BE1EF19156A499E001F99E2 /* PFScreenOptionsViewController.xib in Resources */,
+				0BE1EF1B156A4E90001F99E2 /* cloudsona_splash.png in Resources */,
+				0BE1EF40156A5909001F99E2 /* soundwave2.jpg in Resources */,
+				0BE1EF41156A5909001F99E2 /* soundwave3.jpg in Resources */,
+				0BE1EF42156A5909001F99E2 /* soundwave4.jpg in Resources */,
+				0BE1EF43156A5909001F99E2 /* soundwave5.jpg in Resources */,
+				0BE1EF44156A5909001F99E2 /* soundwave6.jpg in Resources */,
+				0BE1EF45156A5909001F99E2 /* soundwave7.jpg in Resources */,
+				0BE1EF47156A5913001F99E2 /* soundwave.jpg in Resources */,
+				0BE5E0AC156B70610032F394 /* 3dButton.png in Resources */,
+				0B0B6B5B156E41DC00FAB80C /* Default-Landscape~ipad.png in Resources */,
+				0B0B6B5D156E426700FAB80C /* ic_cloudsona.png in Resources */,
+				0B5F4BC3157E1B7B000D3A1C /* SettingsViewController.xib in Resources */,
+				0B331CB015CAAB07003EBD12 /* soundwave8.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0BE087BB155802AF001B46F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BE087D0155802AF001B46F0 /* main.m in Sources */,
+				0BE087D4155802AF001B46F0 /* AppDelegate.m in Sources */,
+				0BE087DF15580459001B46F0 /* MainViewController.m in Sources */,
+				0BE087E41558068F001B46F0 /* SlidersViewController.m in Sources */,
+				0BE087E9155808CF001B46F0 /* SliderButton.m in Sources */,
+				0B045597155A57CF00F37A7F /* ColorPickerViewController.m in Sources */,
+				0B4232211563A04200D235BB /* HorizontalMenuViewController.m in Sources */,
+				0B4232231563A04200D235BB /* AppTutorialPageController.m in Sources */,
+				0B4232291563C82B00D235BB /* MainScrollViewViewController.m in Sources */,
+				0B42322E1563CAD900D235BB /* SFScreenScrollViewViewController.m in Sources */,
+				0B4232331563CB2100D235BB /* PFScreenScrollViewViewController.m in Sources */,
+				0BE1EF13156A2B1D001F99E2 /* Utils.m in Sources */,
+				0BE1EF18156A499E001F99E2 /* PFScreenOptionsViewController.m in Sources */,
+				0BE1EF4A156A7CC2001F99E2 /* HorizontalMenuItemViewController.m in Sources */,
+				0B5F4BC2157E1B7B000D3A1C /* SettingsViewController.m in Sources */,
+				0B5F4BC6157E2EF1000D3A1C /* ConnectionController.m in Sources */,
+				2FE2624E15A719E700CE7794 /* Connection.m in Sources */,
+				A8C04AF91613435C00E8C914 /* RandomSelector.m in Sources */,
+				A8E8543A164D0CBA00BAF07D /* Settings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0BE087CC155802AF001B46F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BE087CD155802AF001B46F0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0BE087D5155802AF001B46F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Piotr Dabrowski (QP75H85VSD)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3.6.2;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9D3F129-E20B-43A9-AA6E-9E59B5AF1B3F";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0BE087D6155802AF001B46F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Piotr Dabrowski (QP75H85VSD)";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 3.6.2;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9D3F129-E20B-43A9-AA6E-9E59B5AF1B3F";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0BE087D8155802AF001B46F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Piotr Dabrowski (QP75H85VSD)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudSona2/CloudSona2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "CloudSona2/CloudSona2-Info.plist";
+				PRODUCT_NAME = "CloudSona ${CURRENT_PROJECT_VERSION}";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9D3F129-E20B-43A9-AA6E-9E59B5AF1B3F";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0BE087D9155802AF001B46F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Piotr Dabrowski (QP75H85VSD)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudSona2/CloudSona2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "CloudSona2/CloudSona2-Info.plist";
+				PRODUCT_NAME = "CloudSona ${CURRENT_PROJECT_VERSION}";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9D3F129-E20B-43A9-AA6E-9E59B5AF1B3F";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BE087B9155802AF001B46F0 /* Build configuration list for PBXProject "CloudSona2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BE087D5155802AF001B46F0 /* Debug */,
+				0BE087D6155802AF001B46F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BE087D7155802AF001B46F0 /* Build configuration list for PBXNativeTarget "CloudSona2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BE087D8155802AF001B46F0 /* Debug */,
+				0BE087D9155802AF001B46F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0BE087B6155802AF001B46F0 /* Project object */;
+}

@@ -1,0 +1,325 @@
+//
+//  SlidersViewController.m
+//  CloudSona2
+//
+//  Created by Kamil Zaborszczyk on 5/7/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "SlidersViewController.h"
+
+@implementation SlidersViewController
+
+@synthesize sliderViewControllerView;
+@synthesize slidersDelegate;
+
+int buttonsNum = 4;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+        UIColor *uiColorRED = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.7];
+        UIColor *uiColorGREEN = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.7];
+        UIColor *uiColorBLUE = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.7];
+        UIColor *uiColorYELLOW = [UIColor colorWithRed:1.0 green:1.0 blue:0.0 alpha:0.7];
+
+
+        buttons = [[NSMutableArray alloc] initWithCapacity:buttonsNum];
+        // Custom initialization
+        for(int i = 0; i < buttonsNum; ++i) {
+            SliderButton *b = [[[SliderButton alloc] initWithNibName:@"SliderButton" bundle:nil] autorelease];            
+            b.sliderButtonDelegate = self;
+            b.view.layer.cornerRadius = 15;
+            b.view.layer.borderColor = [UIColor darkGrayColor].CGColor;
+            b.view.layer.borderWidth = 3;
+            b.powerLvlSlider.value = 1;
+
+            
+            //Initialisation wish from HANS
+            switch (i) {
+                case 0:
+                    [b.view setBackgroundColor:uiColorRED];
+
+                    break;
+                case 1:
+                    [b.view setBackgroundColor:uiColorGREEN];
+                    break;
+                case 2:
+                    [b.view setBackgroundColor:uiColorBLUE];
+                    break;
+                case 3:
+                    [b.view setBackgroundColor:uiColorYELLOW];
+                    break;
+                    
+                default:
+                    break;
+            }
+
+            [buttons addObject: b];
+            
+        }
+    }
+    return self;
+}
+
+-(void)dealloc {
+    [buttons release];
+    
+    [super dealloc];
+}
+
+-(void)wasDroppedAtPos:(CGPoint)pos color:(UIColor*)color{
+    for (int i =0; i<buttons.count; i++){
+        SliderButton *tmpBTN = (SliderButton*) [buttons objectAtIndex:i];
+                
+        if(tmpBTN.wasAlrdyActive == NO)
+            
+            //Save propertys for reactivation via toggle
+            tmpBTN.wasAlrdyActive = YES;
+          //  tmpBTN.bgrColor = color;
+            
+            CGRect btnRect = tmpBTN.view.frame;
+            
+            if(CGRectContainsPoint(btnRect, pos)){
+                
+                [UIView animateWithDuration:0.3 animations:^{
+                    
+                    [tmpBTN.view setBackgroundColor:color];
+                    tmpBTN.toggleButton.enabled = YES;
+                    tmpBTN.toggleButton.on = YES; 
+                    tmpBTN.powerLvlSlider.enabled = YES;
+                    tmpBTN.powerLvlSlider.value = 1;
+                }];
+            }
+    }
+    
+}
+
+#pragma mark SliderButtonDelegate implementation
+- (void)sliderButton:(SliderButton *)sb didToggleActive:(BOOL)active {
+    
+    if(active == NO){
+        
+        for (int i=0; i<buttons.count; i++){
+            
+            SliderButton *tmpBtn = (SliderButton*) [buttons objectAtIndex:i];
+            
+            if(sb == tmpBtn){
+                
+                //Save btn properties
+                tmpBtn.sliderLvl = sb.powerLvlSlider.value;
+                tmpBtn.bgrColor = sb.view.backgroundColor;
+
+                [sb.view setBackgroundColor:[UIColor darkGrayColor]];
+                
+                [UIView animateWithDuration:0.2 animations:^{
+                    //sb.powerLvlSlider.value = 0.0;
+                    sb.toggleButton.on = NO; 
+                    sb.powerLvlSlider.enabled = NO;
+                }];
+
+            }
+        }
+    }
+    
+    else{
+        
+        for (int i=0; i<buttons.count; i++){
+            
+            SliderButton *tmpBtn = (SliderButton*) [buttons objectAtIndex:i];
+            tmpBtn.view.layer.cornerRadius = 15;
+            if(sb == tmpBtn){
+                //tmpBtn.view.layer.cornerRadius = 15;
+                
+                //Load former saved values
+                [UIView animateWithDuration:0.3 animations:^{
+                    [sb.view setBackgroundColor: tmpBtn.bgrColor ];
+                    sb.powerLvlSlider.enabled = YES;
+                    sb.powerLvlSlider.value = tmpBtn.sliderLvl; 
+
+                }];
+            }
+        }
+    }
+}
+
+- (void)sliderButton:(SliderButton *)sb didSliderPositionChange:(float)pos {
+    UIColor *bgColor = sb.view.backgroundColor;
+    CGColorRef color = [bgColor CGColor];
+    
+    UInt8 byte0 = SET_LED_COLOR;
+    UInt8 byte1;
+    UInt8 byte2;
+    UInt8 byte3;
+    UInt8 byte4;
+    
+    NSMutableData *payload = [[NSMutableData alloc] init];
+    CGFloat red, green, blue, alpha;
+    
+    byte1 = (UInt8) GROUP1;
+    
+    [[UIColor redColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+    
+    byte2 = (UInt8) (red*7);
+    byte3 = (UInt8) (green*7);
+    byte4 = (UInt8) (blue*7);
+    
+    for (int i =0; i<buttons.count; i++) {
+        if ([buttons objectAtIndex:i] == sb) {
+            byte1 = (UInt8) i+1;
+        }
+    }
+    
+    int numComponents = CGColorGetNumberOfComponents(color);
+    
+    if (numComponents == 4)
+    {
+        const CGFloat *components = CGColorGetComponents(color);
+        CGFloat red = components[0];
+        CGFloat green = components[1];
+        CGFloat blue = components[2];
+        CGFloat alpha = components[3];
+        
+        alpha = sb.powerLvlSlider.value+0.3;
+        
+        sb.view.backgroundColor = [UIColor colorWithRed:red green:green blue:blue
+                                                  alpha:alpha];
+        
+        //SEND COLOR TO MAMERT LIKE THIS:
+        // r*=alpha;
+        // g*=alpha;
+        // b*=alpha;
+        // SEND TO MAMERT R, G, B only after conversion wo. alpha
+    }
+    
+    //[bgColor release];
+    /*
+    [payload appendBytes:&byte0 length:sizeof(byte0)];
+    [payload appendBytes:&byte1 length:sizeof(byte1)];
+    [payload appendBytes:&byte2 length:sizeof(byte2)];
+    [payload appendBytes:&byte3 length:sizeof(byte3)];
+    [payload appendBytes:&byte4 length:sizeof(byte4)];
+    
+    Connection *connection = [Connection sharedInstance];
+    [connection sendData:payload];
+    
+    [payload release];
+     */
+}
+
+-(void) sliderButton:(SliderButton *)sb didEnable:(BOOL)enable {
+    if (enable == true) {
+        
+        UInt8 byte0 = SET_LED_COLOR;
+        UInt8 byte1;
+        UInt8 byte2;
+        UInt8 byte3;
+        UInt8 byte4;
+        
+        NSMutableData *payload = [[NSMutableData alloc] init];
+        CGFloat red, green, blue, alpha;
+        
+        for (int i =0; i<buttons.count; i++){
+            if ([[buttons objectAtIndex:i] isEqual:sb]) {
+                byte1 = (UInt8) i+1;
+            }
+        }
+
+        [sb.view.backgroundColor getRed:&red green:&green blue:&blue alpha:&alpha];
+        
+        byte2 = (UInt8) (red*7*alpha);
+        byte3 = (UInt8) (green*7*alpha);
+        byte4 = (UInt8) (blue*7*alpha);
+        
+        NSLog(@"Enable %d %d %d", byte2, byte3, byte4);
+        
+        [payload appendBytes:&byte0 length:sizeof(byte0)];
+        [payload appendBytes:&byte1 length:sizeof(byte1)];
+        [payload appendBytes:&byte2 length:sizeof(byte2)];
+        [payload appendBytes:&byte3 length:sizeof(byte3)];
+        [payload appendBytes:&byte4 length:sizeof(byte4)];
+        
+        Connection *connection = [Connection sharedInstance];
+        [connection sendData:payload];
+        
+        [payload release];
+        
+    }
+    else {
+        UInt8 byte0 = LED_OFF;
+        UInt8 byte1;
+        UInt8 byte2;
+        UInt8 byte3;
+        UInt8 byte4;
+        
+        NSMutableData *payload = [[NSMutableData alloc] init];
+        
+        for (int i =0; i<buttons.count; i++){
+            if ([[buttons objectAtIndex:i] isEqual:sb]) {
+                byte1 = (UInt8) i+1;
+            }
+        }
+        
+        [payload appendBytes:&byte0 length:sizeof(byte0)];
+        [payload appendBytes:&byte1 length:sizeof(byte1)];
+        [payload appendBytes:&byte2 length:sizeof(byte2)];
+        [payload appendBytes:&byte3 length:sizeof(byte3)];
+        [payload appendBytes:&byte4 length:sizeof(byte4)];
+        
+        Connection *connection = [Connection sharedInstance];
+        [connection sendData:payload];
+        
+        [payload release];
+
+        
+    }
+}
+
+//#pragma mark SlidersViewControllerDelegate implementation
+//
+//-(void) slidersDelegate:colorDroppedAtPos: (CGPoint) pos{
+//    NSLog(@"STH happened");
+//}
+
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    CGRect bFrame = ((SliderButton*)[buttons objectAtIndex:0]).view.frame;
+    bFrame.origin.x = 50;
+    bFrame.origin.y = 20;
+    
+    for (int i = 0; i<buttons.count; i++){
+        ((SliderButton*)[buttons objectAtIndex:i]).view.frame = bFrame;
+        bFrame.origin.x += 250;
+        [self.view addSubview:((SliderButton*)[buttons objectAtIndex:i]).view];
+    }    
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+	return YES;
+}
+
+@end

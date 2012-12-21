@@ -1,0 +1,150 @@
+//
+//  MainViewController.m
+//  CloudSona2
+//
+//  Created by Kamil Zaborszczyk on 5/7/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "MainViewController.h"
+
+@implementation MainViewController
+@synthesize label1;
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        slidersVC = [[SlidersViewController alloc] initWithNibName:
+            @"SlidersViewController" bundle:nil];
+        slidersVC.slidersDelegate = self;
+    
+        colorPickerVC = [[ColorPickerViewController alloc] initWithNibName:@"ColorPickerViewController" bundle:nil];
+        colorPickerVC.cpvcDelegate = self;    
+        
+        sliderButton = [[SliderButton alloc] initWithNibName:@"SliderButton" bundle:nil];
+        sliderButton.sliderButtonDelegate = self;
+        
+        horizontalMenuVC = [[HorizontalMenuViewController alloc] initWithNibName:@"HorizontalMenuViewController" bundle:nil];
+        
+        
+//        sfsScrollViewVC =  [[SFScreenScrollViewViewController alloc] initWithNibName:@"SFScreenScrollViewViewController" bundle:nil];
+//        sfsScrollViewVC.sfssvvcDelegate = self;
+        
+        CGRect sliderFrame = colorPickerVC.view.frame;
+        sliderFrame.origin.y = slidersVC.view.frame.size.height;
+
+        colorPickerVC.view.frame = sliderFrame;
+        
+        CGRect horizontalVCFrame = horizontalMenuVC.view.frame;
+        horizontalVCFrame.origin.y = colorPickerVC.view.frame.origin.y + colorPickerVC.view.frame.size.height;
+        horizontalMenuVC.view.frame = horizontalVCFrame;
+        
+        
+    }
+    return self;
+}
+
+- (void) dealloc {
+    [horizontalMenuVC release];
+    [colorPickerVC release];
+    [slidersVC release];
+    [label1 release];
+    [super dealloc];
+}
+
+
+#pragma mark SlidersViewControllerDelegate implementation
+-(void)buttonToggleActive:(BOOL)active atIndex:(int)index {
+    switch(index) {
+        case 0:
+            label1.text = active ? @"YES" : @"NO";
+            break;
+    }
+}
+
+#pragma mark ColorPickerViewControllerDelegate implementation
+-(void)colorDroppedAtPos: (CGPoint)pos: (UIColor*) color{
+    if (!slidersVC.view.isHidden)
+        if (CGRectContainsPoint(slidersVC.view.frame, pos))
+            [slidersVC wasDroppedAtPos:pos color:color];
+
+    if (!horizontalMenuVC.view.isHidden)
+        if (CGRectContainsPoint(horizontalMenuVC.view.frame, pos))
+            [horizontalMenuVC wasDroppedAtPos:pos color:color];
+
+    
+//    if (!sfsScrollViewVC.view.isHidden)
+//        if (!CGRectContainsPoint(sfsScrollViewVC.view.frame, pos))
+//            [sfsScrollViewVC wasDroppedAtPos:pos color:color];
+}
+
+
+-(void)colorPicked:(UIColor *)color atIndex:(int)index{
+    //[slidersVC color:color droppedAt:CGPoint
+
+    //[sliderButton.view setBackgroundColor:color];
+    [slidersVC.view setBackgroundColor:color];
+}
+
+#pragma mark SliderButtonDelegate implementation
+-(void)sliderButton:(SliderButton*)sb droppedColorAtButton:(float)pos{
+    [sb.view setBackgroundColor:[UIColor blueColor]];
+}
+             
+- (void) doSth{
+
+    NSLog(@"DID STH");
+  
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.view addSubview:slidersVC.view];
+    [self.view addSubview:colorPickerVC.view];
+    [self.view addSubview:horizontalMenuVC.view];
+    [horizontalMenuVC reload];
+    [horizontalMenuVC setPage:1 animated:NO];
+    
+    [self.view bringSubviewToFront:colorPickerVC.view];
+    
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidUnload
+{
+    [self setLabel1:nil];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
+@end

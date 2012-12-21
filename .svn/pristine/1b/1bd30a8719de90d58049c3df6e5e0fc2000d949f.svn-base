@@ -1,0 +1,310 @@
+//
+//  SettingsViewController.m
+//  CloudSona2
+//
+//  Created by Kamil Zaborszczyk on 6/5/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "SettingsViewController.h"
+#import "Utils.h"
+#import "ConnectionController.h"
+#import "OPCODE.h"
+
+@implementation SettingsViewController
+@synthesize txtFldHostIP;
+@synthesize txtFldHostPort;
+@synthesize lblStatus;
+@synthesize txtFldDelay;
+@synthesize redButtonGR1;
+@synthesize greenButtonGR1;
+@synthesize blueButtonGR1;
+@synthesize yellowButtonGR1;
+@synthesize saveButton;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        lblStatus.text = conStatus;
+        
+        self.delegate = self;
+//        
+//        if (host) {
+//            txtFldHostIP.text = host;
+//        }
+//        
+//        if(port!=0){
+//            txtFldHostPort.text = [NSString stringWithFormat:@"%d", port];
+//        }
+//        
+    }
+    return self;
+}
+
+-(void) connectionStatusChanged: (NSString*)status{
+    lblStatus.text = status;
+}
+
+- (IBAction)connectClick:(id)sender {
+
+    int mPort = txtFldHostPort.text.intValue;
+    NSString *mHost = txtFldHostIP.text;
+    
+    [self establishConnection:mHost :mPort];
+    lblStatus.text = @"Connecting...";
+
+}
+
+
+-(void)onSaveButtonClicked {
+    UIViewController *currentVC = [Utils getMainVC];
+    Connection *conn = [Connection sharedInstance];
+    conn.ipAddress = txtFldHostIP.text;
+    conn.port = txtFldHostPort.text;
+    conn.delay = txtFldDelay.text;
+    [currentVC dismissModalViewControllerAnimated:YES];
+}
+
+
+- (void)onGR1BtnClick:(id)sender{
+    
+    UInt8 byte1 = SET_LED_COLOR;
+    UInt8 byte2;
+    UInt8 byte3;
+    UInt8 byte4;
+    UInt8 byte5;
+
+    NSMutableData *payload = [[NSMutableData alloc] init];
+    CGFloat red, green, blue, alpha;
+
+    byte2 = GROUP1;
+    
+    if (sender == yellowButtonGR1)
+        [[UIColor yellowColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+    
+    if (sender == blueButtonGR1)
+        [[UIColor blueColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+
+    if (sender == greenButtonGR1)
+        [[UIColor greenColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+
+        
+    if (sender == redButtonGR1)
+        [[UIColor redColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+    
+    
+    [redButtonGR1.currentTitleColor getRed:&red green:&green blue:&blue alpha:&alpha];
+    
+    byte3 = (UInt8) red;
+    byte4 = (UInt8) green;
+    byte5 = (UInt8) blue;
+    
+    [payload appendBytes:&byte1 length:sizeof(byte1)];
+    [payload appendBytes:&byte2 length:sizeof(byte2)];
+    [payload appendBytes:&byte3 length:sizeof(byte3)];
+    [payload appendBytes:&byte4 length:sizeof(byte4)];
+    [payload appendBytes:&byte5 length:sizeof(byte5)];
+    
+    
+    [self sendData:payload];
+    
+    [payload release];
+
+}
+
+
+-(IBAction)startInitialBlink{
+    
+    
+    UInt8 byte1 = 0x07;
+    UInt8 byte2 = ALLGROUPS;
+    UInt8 byte3 = EMPTY_BYTE;
+    UInt8 byte4 = EMPTY_BYTE;
+    UInt8 byte5 = EMPTY_BYTE;
+    
+//
+//    UInt8 byte1 = SET_LED_COLOR;
+//    UInt8 byte2;
+//    UInt8 byte3;
+//    UInt8 byte4;
+//    UInt8 byte5;
+//
+//    
+//    for (int i=0; i<4; i++) {
+//
+        NSMutableData *payload = [[NSMutableData alloc] init];
+//        CGFloat red, green, blue, alpha;
+//            
+//        switch (i) {
+//            case 0:
+//                [[UIColor redColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+//                byte2 = GROUP1;
+//                byte3 = (UInt8) red;
+//                byte4 = (UInt8) green;
+//                byte5 = (UInt8) blue;
+//                break;
+//            case 1:   
+//                [[UIColor greenColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+//                byte2 = GROUP2;
+//                byte3 = (UInt8) red;
+//                byte4 = (UInt8) green;
+//                byte5 = (UInt8) blue;
+//                break;            
+//            case 2:
+//                [[UIColor blueColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+//                byte2 = GROUP3;
+//                byte3 = (UInt8) red;
+//                byte4 = (UInt8) green;
+//                byte5 = (UInt8) blue;
+//                break;
+//            case 3:
+//                [[UIColor yellowColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+//                byte2 = GROUP4;
+//                byte3 = (UInt8) red;
+//                byte4 = (UInt8) green;
+//                byte5 = (UInt8) blue;
+//                break;         
+//                
+//            default:
+//                break;
+//        }
+//        
+        [payload appendBytes:&byte1 length:sizeof(byte1)];
+        [payload appendBytes:&byte2 length:sizeof(byte2)];
+        [payload appendBytes:&byte3 length:sizeof(byte3)];
+        [payload appendBytes:&byte4 length:sizeof(byte4)];
+        [payload appendBytes:&byte5 length:sizeof(byte5)];
+//        
+//        
+       [self sendData:payload];
+//
+//        //Delay between packets
+//        //Lets UI freeze
+//        //sleep(txtFldDelay.text.floatValue/1000);
+ //       [NSThread sleepForTimeInterval:txtFldDelay.text.floatValue/1000];  
+//        //NSLog([NSString stringWithFormat:@"Packet send #: %i", i]);
+//
+//        
+        [payload release];
+//    }
+    
+}
+
+-(void)onLEDSoffButtonClicked{
+   
+    
+    UInt8 byte1 = 0x08;
+    UInt8 byte2 = 0x80;
+    UInt8 byte3 = EMPTY_BYTE;
+    UInt8 byte4 = EMPTY_BYTE;
+    UInt8 byte5 = EMPTY_BYTE;
+    
+//    UInt8 byte1 = LED_OFF;
+//    UInt8 byte2 = EMPTY_BYTE;
+//    UInt8 byte3 = EMPTY_BYTE;
+//    UInt8 byte4 = EMPTY_BYTE;
+//    UInt8 byte5 = EMPTY_BYTE;
+//    
+//    for (int i=0; i<4; i++) {
+//            
+        NSMutableData *payload = [[NSMutableData alloc] init];        
+//        switch (i) {
+//            case 0:
+//                byte2 = GROUP1;
+//                break;
+//            case 1:   
+//                byte2 = GROUP2;
+//                break;            
+//            case 2:
+//                byte2 = GROUP3;
+//                break;
+//            case 3:
+//                byte2 = GROUP4;
+//                break;         
+//                
+//            default:
+//                break;
+//        }
+//    
+    [payload appendBytes:&byte1 length:sizeof(byte1)];
+    [payload appendBytes:&byte2 length:sizeof(byte2)];
+//  
+//    //Unused bits
+    [payload appendBytes:&byte3 length:sizeof(byte3)];
+    [payload appendBytes:&byte4 length:sizeof(byte4)];
+    [payload appendBytes:&byte5 length:sizeof(byte5)];
+//        
+//    //Delay between packets
+//    //Lets UI freeze
+//    [NSThread sleepForTimeInterval:txtFldDelay.text.floatValue/1000];
+//    //    NSLog([NSString stringWithFormat:@"Packet OFF send #: %i", i]);
+//        
+    [self sendData:payload];
+//    
+    [payload release];
+//    }
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    [self restoreConnectionData];
+}
+
+- (void)viewDidUnload
+{
+
+    [self setSaveButton:nil];
+    [self setTxtFldHostIP:nil];
+    [self setTxtFldHostPort:nil];
+    [self setLblStatus:nil];
+    [self setTxtFldDelay:nil];
+    [self setRedButtonGR1:nil];
+    [self setGreenButtonGR1:nil];
+    [self setBlueButtonGR1:nil];
+    [self setYellowButtonGR1:nil];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+	return YES;
+}
+
+-(void)restoreConnectionData {
+    Connection *conn = [Connection sharedInstance];
+    txtFldHostIP.text = conn.ipAddress;
+    txtFldHostPort.text = conn.port;
+    txtFldDelay.text = conn.delay;
+}
+
+- (void)dealloc {
+    [saveButton release];
+    [txtFldHostIP release];
+    [txtFldHostPort release];
+    [lblStatus release];
+    [txtFldDelay release];
+    [redButtonGR1 release];
+    [greenButtonGR1 release];
+    [blueButtonGR1 release];
+    [yellowButtonGR1 release];
+    [super dealloc];
+}
+@end

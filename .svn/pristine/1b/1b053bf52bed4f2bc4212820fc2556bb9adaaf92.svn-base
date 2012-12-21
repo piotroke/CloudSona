@@ -1,0 +1,112 @@
+//
+//  SettingsViewController.h
+//  CloudSona2
+//
+//  Created by Kamil Zaborszczyk on 6/5/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+#define DS_DC_MIN 1.0;
+#define DS_DC_MAX 10.0;
+#define DS_DC_STEP 1.0;
+#define DS_DC_DEFAULT 1.0;
+#define I_DC_MIN 1.0;
+#define I_DC_MAX 10.0;
+#define I_DC_STEP 0.5;
+#define I_DC_DEFAULT 1.0;
+#define P_DC_MIN 50.0;
+#define P_DC_MAX 1000.0;
+#define P_DC_STEP 50.0;
+#define P_DC_DEFAULT 500.0;
+#define T_DC_MIN 50.0;
+#define T_DC_MAX 1000.0;
+#define T_DC_STEP 50.0;
+#define T_DC_DEFAULT 500.0;
+#define DS_CMDT_MIN 0.0;
+#define DS_CMDT_MAX 10.0;
+#define DS_CMDT_STEP 1.0;
+#define DS_CMDT_DEFAULT 5.0;
+#define I_PT_MIN 10.0;
+#define I_PT_MAX 100.0;
+#define I_PT_STEP 10.0;
+#define I_PT_DEFAULT 20.0;
+#define M_BT_MIN 10.0;
+#define M_BT_MAX 100.0;
+#define M_BT_STEP 10.0;
+#define M_BT_DEFAULT 60.0;
+#define T_CMDT_MIN 1.0;
+#define T_CMDT_MAX 10.0;
+#define T_CMDT_STEP 1.0;
+#define T_CMDT_DEFAULT 5.0;
+#define TPRESS_MIN 100.0;
+#define TPRESS_MAX 1000.0;
+#define TPRESS_STEP 100.0;
+#define TPRESS_DEFAULT 100.0;
+#define LED_INT_MIN 25.0;
+#define LED_INT_MAX 100.0;
+#define LED_INT_STEP 25.0;
+#define LED_INT_DEFAULT 25.0;
+
+
+#import <UIKit/UIKit.h>
+#import "ConnectionController.h"
+
+@interface SettingsViewController : ConnectionController <ConnectionControllerDelegate>{
+    
+    ConnectionController *conController;
+    IBOutlet UIStepper *ds_dc_stepper;
+    IBOutlet UISlider *ds_dc_slider;
+    IBOutlet UIButton *ds_dc_button;
+    IBOutlet UIStepper *i_dc_stepper;
+    IBOutlet UISlider *i_dc_slider;
+    IBOutlet UIButton *i_dc_button;
+    IBOutlet UIStepper *p_dc_stepper;
+    IBOutlet UISlider *p_dc_slider;
+    IBOutlet UIButton *p_dc_button;
+    IBOutlet UIStepper *t_dc_stepper;
+    IBOutlet UISlider *t_dc_slider;
+    IBOutlet UIButton *t_dc_button;
+    IBOutlet UIStepper *ds_cmdt_stepper;
+    IBOutlet UISlider *ds_cmdt_slider;
+    IBOutlet UIButton *ds_cmdt_button;
+    IBOutlet UIStepper *i_pt_stepper;
+    IBOutlet UISlider *i_pt_slider;
+    IBOutlet UIButton *i_pt_button;
+    IBOutlet UIStepper *m_bt_stepper;
+    IBOutlet UISlider *m_bt_slider;
+    IBOutlet UIButton *m_bt_button;
+    IBOutlet UIStepper *t_cmdt_stepper;
+    IBOutlet UISlider *t_cmdt_slider;
+    IBOutlet UIButton *t_cmdt_button;
+    IBOutlet UIStepper *tpress_stepper;
+    IBOutlet UISlider *tpress_slider;
+    IBOutlet UIButton *tpress_button;
+    IBOutlet UIStepper *led_int_stepper;
+    IBOutlet UISlider *led_int_slider;
+    IBOutlet UIButton *led_int_button;
+}
+@property (retain, nonatomic) IBOutlet UIButton *saveButton;
+
+- (IBAction) onSaveButtonClicked;
+- (IBAction)connectClick:(id)sender;
+- (IBAction)onLEDSoffButtonClicked;
+- (IBAction)onGR1BtnClick:(id)sender;
+-(IBAction) startInitialBlink;
+-(void) restoreConnectionData;
+-(void) establishUIElements;
+-(void) initButtons;
+-(void) establishSliders;
+-(void) establishSteppers;
+-(IBAction)stepperChanged:(id)sender;
+-(IBAction)sliderChanged:(id)sender;
+-(void) setValue:(float)value forButton:(id)sender;
+
+@property (retain, nonatomic) IBOutlet UITextField *txtFldHostIP;
+@property (retain, nonatomic) IBOutlet UITextField *txtFldHostPort;
+@property (retain, nonatomic) IBOutlet UILabel *lblStatus;
+@property (retain, nonatomic) IBOutlet UITextField *txtFldDelay;
+@property (retain, nonatomic) IBOutlet UIButton *redButtonGR1;
+@property (retain, nonatomic) IBOutlet UIButton *greenButtonGR1;
+@property (retain, nonatomic) IBOutlet UIButton *blueButtonGR1;
+@property (retain, nonatomic) IBOutlet UIButton *yellowButtonGR1;
+
+@end

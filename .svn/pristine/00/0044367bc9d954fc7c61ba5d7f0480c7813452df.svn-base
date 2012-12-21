@@ -1,0 +1,37 @@
+//
+//  ConnectionController.h
+//  CloudSona2
+//
+//  Created by Kamil Zaborszczyk on 6/5/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@protocol ConnectionControllerDelegate <NSObject>
+
+-(void) connectionStatusChanged: (NSString*)status;
+
+@end
+
+
+
+@interface ConnectionController : UIViewController{
+
+    NSInputStream *inputStream;
+    NSOutputStream *outputStream;
+    NSString *conStatus;
+    
+    id <ConnectionControllerDelegate> delegate;
+
+}
+
+@property (nonatomic, assign) id <ConnectionControllerDelegate> delegate;
+
+-(void)establishConnection:(NSString*) mHost: (int) mPort;
+//- (void)sendData:(NSString*)data;
+//- (void)sendData:(UInt8) type;
+- (void)sendData:(NSMutableData *) payload;
+
+
+@end

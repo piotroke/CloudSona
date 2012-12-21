@@ -1,0 +1,65 @@
+<!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003-2005 Frederico Caldeira Knabben
+ * 
+ * Licensed under the terms of the GNU Lesser General Public License:
+ * 		http://www.opensource.org/licenses/lgpl-license.php
+ * 
+ * For further information visit:
+ * 		http://www.fckeditor.net/
+ * 
+ * "Support Open Source software. What about a donation today?"
+ * 
+ * File Name: fckeditor.original.html
+ * 	Main page that holds the editor.
+ * 
+ * File Authors:
+ * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+ -->
+<html><head>
+		<title>FCKeditor</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<meta name="robots" content="noindex, nofollow">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Cache-Control" content="public">
+		<script type="text/javascript" src="fckeditor_data/fcklanguagemanager.js"></script>
+		<script type="text/javascript" src="fckeditor_data/fck_startup.js"></script>
+	<script src="fckeditor_data/fckconfig.js" type="text/javascript"></script><script src="fckeditor_data/gmxconfig.js" type="text/javascript"></script><link href="fckeditor_data/fck_editor.css" type="text/css" rel="stylesheet"><script src="fckeditor_data/fckeditorcode_gecko_1.js" type="text/javascript"></script><link href="fckeditor_data/fck_contextmenu.css" type="text/css" rel="stylesheet"><script src="fckeditor_data/de.js" type="text/javascript"></script><script src="fckeditor_data/fckeditorcode_gecko_2.js" type="text/javascript"></script><script src="fckeditor_data/fckplugin_005.js" type="text/javascript"></script><script src="fckeditor_data/fckplugin_004.js" type="text/javascript"></script><script src="fckeditor_data/fckplugin_002.js" type="text/javascript"></script><script src="fckeditor_data/fckplugin_003.js" type="text/javascript"></script><script src="fckeditor_data/fckplugin.js" type="text/javascript"></script></head>
+	<body style="margin: 0pt; padding: 0pt; -moz-user-select: none;">
+		<table style="border: medium none; table-layout: fixed; width: 100%; height: 100%;" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td unselectable="on" style="overflow: hidden;">
+					<table style="border: medium none; width: 100%;" cellpadding="0" cellspacing="0">
+						<tbody><tr id="Collapsed" style="display: none;">
+							<td title="Toolbar ausklappen" id="ExpandHandle" class="TB_Expand" unselectable="on" colspan="3" onclick="FCKToolbarSet.Expand();return false;">
+							 	<img class="TB_ExpandImg" src="fckeditor_data/spacer.gif" style="width: 8px; height: 4px;" unselectable="on" alt="">
+							</td>
+						</tr>
+						<tr id="Expanded" style="">
+							<td title="Toolbar einklappen" id="CollapseHandle" style="display: none;" class="TB_Collapse" unselectable="on" onclick="FCKToolbarSet.Collapse();return false;" valign="bottom">
+								<img class="TB_CollapseImg" src="fckeditor_data/spacer.gif" style="width: 8px; height: 4px;" unselectable="on" alt="">
+							</td>
+							<td id="eToolbar" class="TB_ToolbarSet" unselectable="on"><table style="float: left;" class="TB_Toolbar" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Start"><img src="fckeditor_data/toolbar_004.gif" style="" onload="this.style.visibility = '';" height="21" width="7"></td><td><div class="TB_Button_Disabled"><table title="Drucken" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/print.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Vorschau" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/preview.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Off"><table title="Rückgängig" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/undo.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Disabled"><table title="Wiederherstellen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/redo.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Off"><table title="Finden" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/find.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Ersetzen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/replace.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_On"><table title="Linksbündig" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/justifyleft.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Zentriert" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/justifycenter.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Rechtsbündig" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/justifyright.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Blocksatz" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/justifyfull.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Off"><table title="Nummerierte Liste einfügen/entfernen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/insertorderedlist.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Liste einfügen/entfernen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/insertunorderedlist.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Horizontale Linie einfügen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/inserthorizontalrule.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Disabled"><table title="Einzug verringern" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/outdent.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Einzug erhöhen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/indent.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Off"><table title="Bild einfügen/editieren" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/image.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Smiley einfügen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/smiley.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Sonderzeichen einfügen/editieren" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/specialchar.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Tabelle einfügen/editieren" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/table.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Off"><table title="Link einfügen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/link.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Disabled"><table title="Link entfernen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/unlink.gif" height="21" width="21"></td></tr></tbody></table></div></td><td class="TB_End"><img src="fckeditor_data/toolbar_002.gif" style="" onload="this.style.visibility = '';" height="21" width="12"></td></tr></tbody></table><div style="float: left; clear: left;"></div><table style="float: left;" class="TB_Toolbar" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Start"><img src="fckeditor_data/toolbar_004.gif" style="" onload="this.style.visibility = '';" height="21" width="7"></td><td><table class="" cellpadding="0" cellspacing="0"><tbody><tr><td class="SC_FieldCaption">Schriftart</td><td><div style="width: 100px;" class="SC_Field"><table style="table-layout: fixed;" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="SC_FieldLabel"><label>&nbsp;</label></td><td class="SC_FieldButton">&nbsp;</td></tr></tbody></table></div></td></tr></tbody></table></td><td><table class="" cellpadding="0" cellspacing="0"><tbody><tr><td class="SC_FieldCaption">Schriftgröße</td><td><div style="width: 70px;" class="SC_Field"><table style="table-layout: fixed;" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="SC_FieldLabel"><label>&nbsp;</label></td><td class="SC_FieldButton">&nbsp;</td></tr></tbody></table></div></td></tr></tbody></table></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Off"><table title="Fett" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/bold.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Kursiv" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/italic.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Unterstrichen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/underline.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><div class="TB_Button_Off"><table title="Durchgestrichen" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/strikethrough.gif" height="21" width="21"></td></tr></tbody></table></div></td><td><img src="fckeditor_data/toolbar.gif" style="" onload="this.style.visibility = '';" height="21" width="5"></td><td><div class="TB_Button_Off"><table title="Textfarbe" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="TB_Icon"><img src="fckeditor_data/textcolor.gif" height="21" width="21"></td><td class="TB_ButtonArrow"><img src="fckeditor_data/toolbar_003.gif" height="3" width="5"></td></tr></tbody></table></div></td><td class="TB_End"><img src="fckeditor_data/toolbar_002.gif" style="" onload="this.style.visibility = '';" height="21" width="12"></td></tr></tbody></table></td>
+							<td style="width: 1px;" class="TB_SideBorder"></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+			<tr id="eWysiwyg">
+				<td id="eWysiwygCell" style="border: medium none; height: 100%; vertical-align: top;">
+					<iframe id="eEditorArea" name="eEditorArea" style="border: 1px solid rgb(165, 172, 178); width: 617px; height: 352px;" src="fckeditor_data/fckblank.html" frameborder="no" height="352"></iframe>
+				</td>
+			</tr>
+			<tr id="eSource" style="display: none;">
+				<td class="Source" style="height: 100%; vertical-align: top;">
+					<textarea id="eSourceField" dir="ltr" style="width: 100%; height: 100%;"></textarea>
+				</td>
+			</tr>
+		</tbody></table>
+	
+
+</body></html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>WebMessenger V0.44.2</title>
+        <style type="text/css">
+            html {
+                height: 100%;
+            }
+            
+            body {
+                height: 100%;
+                margin: 0;
+            }
+            
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+        <script type="text/javascript" src="jump_data/comlib.js">
+        </script>
+        <script type="text/javascript">
+            function appendIframe(){
+              var oc = document.createElement("iframe");
+              oc.frameBorder = 0;
+              oc.src = "client.html" + window.location.search;
+              document.body.appendChild(oc);
+            }
+            
+            var comlib = new com.unitedinternet.portal.services.messaging.comlib.ComLib();
+            comlib.initialize(true);
+        </script><script src="jump_data/iac_2_2.js" type="text/javascript"></script>
+    </head>
+    <body onload="appendIframe();">
+    
+
+<iframe src="jump_data/client.html" frameborder="0"></iframe></body></html>

@@ -1,0 +1,26 @@
+//
+//  MainViewController.h
+//  CloudSona2
+//
+//  Created by Kamil Zaborszczyk on 5/7/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "SlidersViewController.h"
+#import "ColorPickerViewController.h"
+#import "HorizontalMenuViewController.h"
+
+@interface MainViewController : UIViewController <SlidersViewControllerDelegate,ColorPickerViewControllerDelegate, SliderButtonDelegate>
+{
+    SlidersViewController *slidersVC;
+    ColorPickerViewController *colorPickerVC;
+    SliderButton *sliderButton;
+    HorizontalMenuViewController *horizontalMenuVC;
+    //SFScreenScrollViewViewController *sfsScrollViewVC;
+    
+
+}
+@property (retain, nonatomic) IBOutlet UILabel *label1;
+
+@end
